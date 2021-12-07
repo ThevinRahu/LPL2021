@@ -397,6 +397,7 @@
             color: #6b7280;
             color: rgba(107, 114, 128, var(--tw-text-opacity))
         }
+
         a {
             text-decoration: none !important;
         }
@@ -466,7 +467,9 @@
         <h1 class="display-1">Players</h1>
     </center>
     <br>
-    <center><h4>Enter Players</h4></center>
+    <center>
+        <h4>Enter Players</h4>
+    </center>
     @foreach($errors->all() as $error)
     <div class="alert alert-danger" role="alert">
         {{$error}}
@@ -484,7 +487,9 @@
 
     </form>
     <br>
-    <center><p>(Click Player to Update)</p></center>
+    <center>
+        <p>(Click Player to Update)</p>
+    </center>
     <center>
         <h2>Jaffna Kings</h2>
     </center>
@@ -497,7 +502,7 @@
         @foreach($data as $data6)
         @if($data6->team == 'Jaffna Kings')
         <tr style="text-align:center">
-            <td><a href = "/playerupdate/{{$data6->id}}">{{$data6->name}}</a></td>
+            <td><a href="/playerupdate/{{$data6->id}}">{{$data6->name}}</a></td>
             <td>{{$data6->country}}</td>
             <td><a href="/delete/{{$data6->id}}" type="button" class="btn btn-danger">Delete</a></td>
         </tr>
@@ -516,7 +521,7 @@
         @foreach($data as $data2)
         @if($data2->team == 'Colombo Stars')
         <tr style="text-align:center">
-            <td><a href = "/playerupdate/{{$data2->id}}">{{$data2->name}}</a></td>
+            <td><a href="/playerupdate/{{$data2->id}}">{{$data2->name}}</a></td>
             <td>{{$data2->country}}</td>
             <td><a href="/delete/{{$data2->id}}" type="button" class="btn btn-danger">Delete</a></td>
         </tr>
@@ -535,7 +540,7 @@
         @foreach($data as $data3)
         @if($data3->team == 'Galle Gladiators')
         <tr style="text-align:center">
-            <td><a href = "/playerupdate/{{$data3->id}}">{{$data3->name}}</a></td>
+            <td><a href="/playerupdate/{{$data3->id}}">{{$data3->name}}</a></td>
             <td>{{$data3->country}}</td>
             <td><a href="/delete/{{$data3->id}}" type="button" class="btn btn-danger">Delete</a></td>
         </tr>
@@ -554,7 +559,7 @@
         @foreach($data as $data4)
         @if($data4->team == 'Kandy Warriors')
         <tr style="text-align:center">
-            <td><a href = "/playerupdate/{{$data4->id}}">{{$data4->name}}</a></td>
+            <td><a href="/playerupdate/{{$data4->id}}">{{$data4->name}}</a></td>
             <td>{{$data4->country}}</td>
             <td><a href="/delete/{{$data4->id}}" type="button" class="btn btn-danger">Delete</a></td>
         </tr>
@@ -573,7 +578,7 @@
         @foreach($data as $data5)
         @if($data5->team == 'Dambulla Giants')
         <tr style="text-align:center">
-            <td><a href = "/playerupdate/{{$data5->id}}">{{$data5->name}}</a></td>
+            <td><a href="/playerupdate/{{$data5->id}}">{{$data5->name}}</a></td>
             <td>{{$data5->country}}</td>
             <td><a href="/delete/{{$data5->id}}" type="button" class="btn btn-danger">Delete</a></td>
         </tr>
@@ -596,8 +601,11 @@
         <h1 class="display-1">Matches</h1>
     </center>
     <br>
-    <center><h4>Enter Matches</h4><br><p>(Enter teams on match stats before entering matches)</center>
-    
+    <center>
+        <h4>Enter Matches</h4><br>
+        <p>(Enter teams on match stats before entering matches)
+    </center>
+
     <form class="input-group mb-3" method="post" action="/savematch">
         {{ csrf_field() }}
         <input type="text" name="matchno" class="form-control" placeholder="Match No">
@@ -639,7 +647,9 @@
         <h1 class="display-1">Match Stats</h1>
     </center>
     <br>
-    <center><h4>Enter Teams</h4></center>
+    <center>
+        <h4>Enter Teams</h4>
+    </center>
     <form class="input-group mb-3" method="post" action="/saveteam">
         {{ csrf_field() }}
         <input type="text" name="team1" class="form-control" placeholder="Team">
@@ -667,7 +677,9 @@
     <hr><br>
     <center>
         <h1 class="display-1">Player Stats</h1><br>
-        <center><h4>Enter Player Stats</h4></center>
+        <center>
+            <h4>Enter Player Stats</h4>
+        </center>
         <form class="input-group mb-3" method="post" action="/saveplayerstatbat">
             {{ csrf_field() }}
             <input type="text" name="ppname" class="form-control" placeholder="Name">

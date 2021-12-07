@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Lanka Premier League 2021</title>
-    <link rel = "icon" href = "{{URL::asset('/image/download111.jpg')}}" type = "image/x-icon">
+    <link rel="icon" href="{{URL::asset('/image/download111.jpg')}}" type="image/x-icon">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -402,26 +402,33 @@
         font-family: 'Nunito', sans-serif;
     }
     </style>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
+
 <body>
     <center>
-    <h1>Player Update</h1><br>
-    <div className="col-md-8 mt-4 mx-auto">
-    <form  method="post" action="/updateplayer">
-        {{ csrf_field() }}
-        <input type="text" name="id" class="form-control"  value={{$details->id}} hidden>
-        <p>Name</p><input type="text" name="pname" class="form-control" placeholder="Name" value="{{$details->name}}">
-        <p>Country</p><input type="text" name="country" class="form-control" placeholder="Country" value="{{$details->country}}">
-        <p>Team</p><input type="text" name="pteam" class="form-control" placeholder="Team" value="{{$details->team}}">
-        <p>NIC</p><input type="text" name="nic" class="form-control" placeholder="NIC" value="{{$details->nic}}">
-        <p>Mobile</p><input type="text" name="mobile" class="form-control" placeholder="Mobile No" value="{{$details->mobile}}">
-        <br>
-        <br>
-        <input type="submit" name="submit" class="btn btn-success" value="Submit">
+        <h1>Player Update</h1><br>
+        <div className="col-md-8 mt-4 mx-auto">
+            <form method="post" action="/updateplayer">
+                {{ csrf_field() }}
+                <input type="text" name="id" class="form-control" value={{$details->id}} hidden>
+                <p>Name</p><input type="text" name="pname" class="form-control" placeholder="Name"
+                    value="{{$details->name}}">
+                <p>Country</p><input type="text" name="country" class="form-control" placeholder="Country"
+                    value="{{$details->country}}">
+                <p>Team</p><input type="text" name="pteam" class="form-control" placeholder="Team"
+                    value="{{$details->team}}">
+                <p>NIC</p><input type="text" name="nic" class="form-control" placeholder="NIC"
+                    value="{{$details->nic}}">
+                <p>Mobile</p><input type="text" name="mobile" class="form-control" placeholder="Mobile No"
+                    value="{{$details->mobile}}">
+                <br>
+                <br>
+                <input type="submit" name="submit" class="btn btn-success" value="Submit">
 
-    </form>
-</center>
+            </form>
+    </center>
 </body>
 
 </html>

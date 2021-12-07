@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Lanka Premier League 2021</title>
-    <link rel = "icon" href = "{{URL::asset('/image/download111.jpg')}}" type = "image/x-icon">
+    <link rel="icon" href="{{URL::asset('/image/download111.jpg')}}" type="image/x-icon">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -403,29 +403,31 @@
     }
     </style>
 </head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 <body class="antialiased">
     <center>
         <h1 style="margin-top: 250px"> Lanka Premier League 2021 </h1>
         <br>
         @foreach($errors->all() as $error)
-    <div class="alert alert-danger" role="alert">
-        {{$error}}
-        @endforeach
-    </div>
-    @if (session('alert'))
-    <div class="alert alert-success">
-        {{ session('alert') }}
-    </div>
-@endif
-        <form  method="post" action="/login">
-        {{ csrf_field() }}
-        <input type="text" name="pname" class="form-control" placeholder="Name">
-        <input type="text" name="nic" class="form-control" placeholder="NIC">
-        <input type="submit" name="submit" class="btn btn-success" value="GO">
+        <div class="alert alert-danger" role="alert">
+            {{$error}}
+            @endforeach
+        </div>
+        @if (session('alert'))
+        <div class="alert alert-success">
+            {{ session('alert') }}
+        </div>
+        @endif
+        <form method="post" action="/login">
+            {{ csrf_field() }}
+            <input type="text" name="pname" class="form-control" placeholder="Name">
+            <input type="text" name="nic" class="form-control" placeholder="NIC">
+            <input type="submit" name="submit" class="btn btn-success" value="GO">
 
-    </form>
-    
+        </form>
+
     </center>
 </body>
 
