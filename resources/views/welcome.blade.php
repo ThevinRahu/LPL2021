@@ -422,8 +422,8 @@
         @endif
         <form method="post" action="/login">
             {{ csrf_field() }}
-            <input type="text" name="pname" class="form-control" placeholder="Name">
-            <input type="text" name="nic" class="form-control" placeholder="NIC">
+            <input type="text" name="pname" class="form-control" placeholder="Player Name">
+            <input type="text" name="nic" class="form-control" placeholder="Player NIC">
             <input type="submit" name="submit" class="btn btn-success" value="GO">
 
         </form>
