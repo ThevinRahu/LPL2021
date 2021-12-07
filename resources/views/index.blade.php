@@ -416,7 +416,7 @@
 
 <body>
     <center>
-        <img src="{{URL::asset('/image/download111.jpg')}}" alt="profile Pic" height="300" width="300">
+        <img src="{{URL::asset('/image/download111.jpg')}}" alt="profile Pic" height="300" width="400">
     </center>
     <br><br>
     <center>
