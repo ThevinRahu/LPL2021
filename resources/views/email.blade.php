@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Lanka Premier League 2021</title>
-    <link rel = "icon" href = "{{URL::asset('/image/download111.jpg')}}" type = "image/x-icon">
+    <link rel="icon" href="{{URL::asset('/image/download111.jpg')}}" type="image/x-icon">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -403,14 +403,12 @@
     }
     </style>
 </head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<body class="antialiased">
-    <center>
-        <h1 style="margin-top: 250px"> Lanka Premier League 2021 </h1>
-        <button id="bt1"
-            style="color:blue; background-color:yellow; padding: 15px 32px; font-size: 16px; margin: 4px 2px; border-radius:8px"><a
-                href="/index">GO!</a></button>
-    </center>
+<body>
+   <h1>{{$details['title']}}</h1>
+   <p>{{$details['body']}}</p>
 </body>
 
 </html>

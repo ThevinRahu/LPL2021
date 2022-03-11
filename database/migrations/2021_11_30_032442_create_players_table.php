@@ -18,8 +18,6 @@ class CreatePlayersTable extends Migration
             $table->string('name');
             $table->string('team');
             $table->string('country');
-            $table->string('nic');
-            $table->integer('mobile');
             $table->timestamps();
         });
     }

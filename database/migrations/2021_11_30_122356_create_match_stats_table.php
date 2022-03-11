@@ -16,10 +16,10 @@ class CreateMatchStatsTable extends Migration
         Schema::create('match_stats', function (Blueprint $table) {
             $table->id();
             $table->string('team');
-            $table->integer('won')->default(0);
-            $table->integer('lost')->default(0);
-            $table->integer('nr')->default(0);
-            $table->integer('points')->default(0);
+            $table->integer('won');
+            $table->integer('lost');
+            $table->integer('nr');
+            $table->integer('points');
             $table->timestamps();
         });
     }

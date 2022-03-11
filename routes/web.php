@@ -16,10 +16,14 @@ use App\Http\Controllers\MatchesController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//routes
+
 Route::get('/', function () {
     return view('welcome');
 });
+/*Route::get('/index', function () {
+    echo "LPL";
+});*/
+
 Route::get('/index',[FirstController::class,'first']);
 Route::post('/saveplayer',[PlayersController::class,'save']);
 Route::post('/savematch',[MatchesController::class,'save']);
@@ -29,10 +33,5 @@ Route::get('/nr/{no}',[MatchesController::class,'nr']);
 Route::get('/delete/{id}',[PlayersController::class,'delete']);
 Route::post('/saveplayerstatbat',[PlayerStatController::class,'savebat']);
 Route::post('/saveplayerstatbowl',[PlayerStatController::class,'savebowl']);
-Route::post('/login',[PlayersController::class,'login']);
-Route::get('/playerupdate/{id}',[PlayersController::class,'player']);
-Route::post('/updateplayer',[PlayersController::class,'playerupdate']);
-Route::post('/saveteam',[MatchesController::class,'team']);
-
 
 

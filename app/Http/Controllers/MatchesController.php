@@ -3,13 +3,10 @@
 namespace App\Http\Controllers;
 use App\Models\Matches;
 use App\Models\MatchStats;
-use App\Models\PlayerStats;
-use App\Models\Players;
 use Illuminate\Http\Request;
 
 class MatchesController extends Controller
 {
-    //matches insert function
     public function save(Request $request){
         $this->validate($request,['matchno'=>'required']);
         $match= new Matches;
@@ -17,14 +14,8 @@ class MatchesController extends Controller
         $match->team1=$request->team1;
         $match->team2=$request->team2;
         $match->save();
-        $data=Players::all();
-        $datam=Matches::all();
-        $stats=MatchStats::orderBy('points', 'DESC')->get();
-        $countries = Players::selectRaw('country, count(*) as count')->groupBy('country')->get();
-        $pstat=PlayerStats::all();
-        return view('index', compact('data', 'datam', 'stats', 'countries', 'pstat'));
+        return view('welcome');
     }
-    //match win update function
     public function won1($no){
         $match=Matches::where('matchno','=', $no)->get();
         $match[0]->won=$match[0]->team1;
@@ -36,14 +27,8 @@ class MatchesController extends Controller
         $stats2=MatchStats::where('team','=',$match[0]->team2)->get();
         $stats2[0]->lost=$stats2[0]->lost+1;
         $stats2[0]->save();
-        $data=Players::all();
-        $datam=Matches::all();
-        $stats=MatchStats::orderBy('points', 'DESC')->get();
-        $countries = Players::selectRaw('country, count(*) as count')->groupBy('country')->get();
-        $pstat=PlayerStats::all();
-        return view('index', compact('data', 'datam', 'stats', 'countries', 'pstat'));
+        return view('welcome');
     }
-    //match win update function
     public function won2($no){
         $match=Matches::where('matchno','=', $no)->get();
         $match[0]->won=$match[0]->team2;
@@ -55,14 +40,8 @@ class MatchesController extends Controller
         $stats2=MatchStats::where('team','=',$match[0]->team1)->get();
         $stats2[0]->lost=$stats2[0]->lost+1;
         $stats2[0]->save();
-        $data=Players::all();
-        $datam=Matches::all();
-        $stats=MatchStats::orderBy('points', 'DESC')->get();
-        $countries = Players::selectRaw('country, count(*) as count')->groupBy('country')->get();
-        $pstat=PlayerStats::all();
-        return view('index', compact('data', 'datam', 'stats', 'countries', 'pstat'));
+        return view('welcome');
     }
-    //match no result update function
     public function nr($no){
         $match=Matches::where('matchno','=', $no)->get();
         $match[0]->won='No Result';
@@ -75,28 +54,7 @@ class MatchesController extends Controller
         $stats2[0]->nr=$stats2[0]->nr+1;
         $stats2[0]->points=$stats2[0]->points+1;
         $stats2[0]->save();
-        $data=Players::all();
-        $datam=Matches::all();
-        $stats=MatchStats::orderBy('points', 'DESC')->get();
-        $countries = Players::selectRaw('country, count(*) as count')->groupBy('country')->get();
-        $pstat=PlayerStats::all();
-        return view('index', compact('data', 'datam', 'stats', 'countries', 'pstat'));
-    }
-    //save team
-    public function team(Request $request){
-        $matchs= new MatchStats;
-        $matchs->team=$request->team1;
-        $matchs->won=0;
-        $matchs->lost=0;
-        $matchs->nr=0;
-        $matchs->points=0;
-        $matchs->save();
-        $data=Players::all();
-        $datam=Matches::all();
-        $stats=MatchStats::orderBy('points', 'DESC')->get();
-        $countries = Players::selectRaw('country, count(*) as count')->groupBy('country')->get();
-        $pstat=PlayerStats::all();
-        return view('index', compact('data', 'datam', 'stats', 'countries', 'pstat'));
+        return view('welcome');
     }
     
 }
